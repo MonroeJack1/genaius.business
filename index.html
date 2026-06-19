@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GenAIus Business | Tool-uri AI pentru afaceri moderne</title>
+  <meta name="description" content="GenAIus Business te ajută să folosești AI-ul în business: tool-uri, ghiduri gratuite, tips & tricks, comunitate Facebook și Skool pentru antreprenori." />
+  <meta name="theme-color" content="#0B1020" />
+  <meta property="og:title" content="GenAIus Business | Tool-uri AI pentru afaceri" />
+  <meta property="og:description" content="Învață cum să folosești AI-ul ca să economisești timp, să vinzi mai bine și să scalezi afacerea." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://genaius.business" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-soft: #0b1020;
+      --card: rgba(255,255,255,.07);
+      --card-strong: rgba(255,255,255,.11);
+      --text: #f7f8ff;
+      --muted: #b6bed5;
+      --line: rgba(255,255,255,.14);
+      --accent: #7c5cff;
+      --accent-2: #18d7ff;
+      --good: #6ef3a5;
+      --warning: #ffd166;
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --radius: 26px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(124,92,255,.35), transparent 34rem),
+        radial-gradient(circle at 80% 15%, rgba(24,215,255,.22), transparent 30rem),
+        radial-gradient(circle at 55% 80%, rgba(110,243,165,.12), transparent 34rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7,11,22,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+      gap: 18px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.03em; }
+    .logo {
+      width: 42px; height: 42px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      box-shadow: 0 10px 30px rgba(124,92,255,.35);
+      font-weight: 900;
+    }
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 14px; align-items: center; }
+    .nav-links a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 13px 18px;
+      font-weight: 800;
+      background: rgba(255,255,255,.06);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.25); }
+    .btn.primary { border: 0; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; box-shadow: 0 18px 48px rgba(124,92,255,.3); }
+    .btn.dark { background: #11182d; }
+    .hero { padding: 92px 0 56px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+    .badge {
+      display: inline-flex; gap: 10px; align-items: center;
+      border: 1px solid var(--line); background: rgba(255,255,255,.06);
+      padding: 8px 13px; border-radius: 999px; color: var(--muted); font-weight: 700; font-size: 13px;
+    }
+    .dot { width: 8px; height: 8px; background: var(--good); border-radius: 999px; box-shadow: 0 0 20px var(--good); }
+    h1 { font-size: clamp(42px, 7vw, 82px); line-height: .96; margin: 22px 0; letter-spacing: -.065em; }
+    h2 { font-size: clamp(30px, 4vw, 52px); line-height: 1.03; margin: 0 0 16px; letter-spacing: -.045em; }
+    h3 { font-size: 22px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.025em; }
+    p { color: var(--muted); margin: 0; }
+    .lead { font-size: 20px; max-width: 740px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
+    .stat { border: 1px solid var(--line); background: rgba(255,255,255,.055); border-radius: 22px; padding: 18px; }
+    .stat b { display: block; font-size: 24px; letter-spacing: -.03em; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.055));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .panel::before {
+      content: ""; position: absolute; inset: -1px;
+      background: radial-gradient(circle at 30% 0%, rgba(124,92,255,.26), transparent 35%), radial-gradient(circle at 90% 20%, rgba(24,215,255,.18), transparent 35%);
+      pointer-events: none;
+    }
+    .dashboard { padding: 22px; position: relative; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .lights { display:flex; gap: 7px; }
+    .lights i { width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,.35); display:block; }
+    .mini-card { border: 1px solid var(--line); background: rgba(7,11,22,.58); border-radius: 20px; padding: 18px; margin-top: 12px; }
+    .mini-card strong { display:block; margin-bottom: 5px; }
+    .progress { height: 10px; border-radius: 99px; background: rgba(255,255,255,.1); overflow:hidden; margin-top: 12px; }
+    .progress span { display:block; height:100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: inherit; }
+    section { padding: 72px 0; }
+    .section-head { display:flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+    .section-head p { max-width: 580px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card {
+      border: 1px solid var(--line); background: var(--card);
+      border-radius: 24px; padding: 24px;
+      min-height: 100%;
+    }
+    .card:hover { background: var(--card-strong); }
+    .icon { width: 46px; height: 46px; display:grid; place-items:center; border-radius: 16px; background: rgba(124,92,255,.16); margin-bottom: 16px; font-size: 22px; }
+    .list { display:grid; gap: 11px; margin-top: 16px; }
+    .list div { display:flex; gap: 10px; color: var(--muted); }
+    .check { color: var(--good); font-weight: 900; }
+    .tool-row { display:grid; grid-template-columns: 1fr auto; gap: 12px; align-items:center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .tool-row:last-child { border-bottom: 0; }
+    .tag { color: #091020; background: var(--good); font-size: 12px; font-weight: 900; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+    .tag.alt { background: var(--warning); }
+    .tag.blue { background: var(--accent-2); }
+    .steps { counter-reset: step; display:grid; gap: 16px; }
+    .step { display:grid; grid-template-columns: 54px 1fr; gap: 16px; align-items:start; }
+    .step::before { counter-increment: step; content: counter(step); width: 54px; height: 54px; border-radius: 18px; display:grid; place-items:center; background: linear-gradient(135deg, var(--accent), var(--accent-2)); font-weight: 900; }
+    .community { background: linear-gradient(135deg, rgba(124,92,255,.2), rgba(24,215,255,.12)); border: 1px solid var(--line); border-radius: 32px; padding: 36px; }
+    .cta { text-align:center; border: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05)); border-radius: 34px; padding: 58px 28px; box-shadow: var(--shadow); }
+    .cta p { max-width: 680px; margin: 0 auto; }
+    footer { padding: 36px 0 54px; border-top: 1px solid var(--line); color: var(--muted); }
+    .footer-inner { display:flex; justify-content: space-between; gap: 20px; align-items:center; flex-wrap: wrap; }
+    .small { font-size: 13px; }
+    .mobile { display:none; }
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .section-head { display:block; }
+      .stats { grid-template-columns: 1fr; }
+      .nav-links { display:none; }
+      .mobile { display:inline-flex; }
+      .hero { padding-top: 64px; }
+      section { padding: 52px 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="GenAIus Business home">
+        <span class="logo">G</span>
+        <span>GenAIus Business</span>
+      </a>
+      <div class="nav-links">
+        <a href="#tooluri">Tool-uri AI</a>
+        <a href="#tips">Tips gratuite</a>
+        <a href="#comunitate">Comunitate</a>
+        <a href="#start" class="btn primary">Începe gratuit</a>
+      </div>
+      <a href="#start" class="btn primary mobile">Start</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="badge"><span class="dot"></span> AI practic pentru antreprenori, freelanceri și echipe mici</div>
+          <h1>Crește-ți afacerea cu tool-uri AI simple, rapide și aplicabile.</h1>
+          <p class="lead">GenAIus Business adună într-un singur loc instrumente, ghiduri, prompturi și comunități gratuite care te ajută să folosești AI-ul pentru vânzări, marketing, operațiuni, conținut și decizii mai bune.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#start">Primește resurse gratuite</a>
+            <a class="btn" href="#tooluri">Vezi tool-urile AI</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>10x</b><span>mai rapid la idei, texte și procese</span></div>
+            <div class="stat"><b>0 lei</b><span>resurse gratuite pentru început</span></div>
+            <div class="stat"><b>24/7</b><span>AI-ul lucrează când tu nu lucrezi</span></div>
+          </div>
+        </div>
+        <aside class="panel" aria-label="Dashboard AI business">
+          <div class="dashboard">
+            <div class="topbar">
+              <div class="lights"><i></i><i></i><i></i></div>
+              <span class="badge">AI Growth OS</span>
+            </div>
+            <div class="mini-card">
+              <strong>Plan de marketing generat</strong>
+              <p>30 de idei de postări, 5 emailuri de vânzare și 3 oferte testabile pentru următoarele 7 zile.</p>
+              <div class="progress"><span style="width:88%"></span></div>
+            </div>
+            <div class="mini-card">
+              <strong>Automatizare clienți</strong>
+              <p>Răspunsuri rapide, follow-up-uri și clasificare lead-uri cu prompturi ușor de copiat.</p>
+              <div class="progress"><span style="width:74%"></span></div>
+            </div>
+            <div class="mini-card">
+              <strong>Decizii mai clare</strong>
+              <p>Transformă datele, feedbackul și întrebările clienților în acțiuni concrete.</p>
+              <div class="progress"><span style="width:92%"></span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="tooluri">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Tool-uri AI pentru fiecare zonă din business</h2>
+            <p>Nu ai nevoie de zeci de aplicații complicate. Ai nevoie de un sistem clar: ce folosești, când folosești și ce rezultat urmărești.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">✍️</div>
+            <h3>Marketing & conținut</h3>
+            <p>Creează postări, reclame, emailuri, pagini de vânzare, scripturi video și calendare editoriale în câteva minute.</p>
+            <div class="list">
+              <div><span class="check">✓</span><span>Prompturi pentru social media</span></div>
+              <div><span class="check">✓</span><span>Idei de campanii și oferte</span></div>
+              <div><span class="check">✓</span><span>Texte optimizate pentru conversii</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="icon">🤝</div>
+            <h3>Vânzări & lead-uri</h3>
+            <p>Folosește AI pentru calificarea lead-urilor, mesaje personalizate, follow-up-uri și obiecții de vânzare.</p>
+            <div class="list">
+              <div><span class="check">✓</span><span>Scripturi de apel și DM</span></div>
+              <div><span class="check">✓</span><span>Secvențe de follow-up</span></div>
+              <div><span class="check">✓</span><span>Analiză rapidă a clienților</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="icon">⚙️</div>
+            <h3>Operațiuni & automatizări</h3>
+            <p>Documentează procese, construiește SOP-uri, răspunde mai repede clienților și economisește ore în fiecare săptămână.</p>
+            <div class="list">
+              <div><span class="check">✓</span><span>Checklist-uri și proceduri</span></div>
+              <div><span class="check">✓</span><span>Răspunsuri suport clienți</span></div>
+              <div><span class="check">✓</span><span>Automatizări simple pentru echipă</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="wrap grid-2">
+        <div>
+          <h2>Tips & tricks gratuite pentru business</h2>
+          <p>Primești idei scurte și aplicabile, fără teorie inutilă. Scopul este să implementezi azi ceva care îți poate aduce timp, claritate sau vânzări.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#start">Vreau acces gratuit</a>
+            <a class="btn" href="#comunitate">Intră în comunitate</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tool-row">
+            <div><strong>Promptul zilei</strong><p class="small">Un prompt practic pentru marketing, vânzări sau productivitate.</p></div>
+            <span class="tag">Gratuit</span>
+          </div>
+          <div class="tool-row">
+            <div><strong>Template-uri AI</strong><p class="small">Structuri gata de copiat pentru emailuri, reclame și oferte.</p></div>
+            <span class="tag alt">Rapid</span>
+          </div>
+          <div class="tool-row">
+            <div><strong>Studii de caz</strong><p class="small">Cum poate fi folosit AI-ul în afaceri reale, nu doar în demo-uri.</p></div>
+            <span class="tag blue">Practic</span>
+          </div>
+          <div class="tool-row">
+            <div><strong>Mini-ghiduri</strong><p class="small">Pași simpli pentru a porni cu AI chiar dacă nu ești tehnic.</p></div>
+            <span class="tag">Start</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Cum începi în 3 pași</h2>
+            <p>GenAIus Business este construit pentru acțiune. Alegi problema, folosești promptul potrivit și măsori rezultatul.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card step"><div><h3>Alege obiectivul</h3><p>Vrei mai multe lead-uri, conținut mai bun, suport mai rapid sau procese mai clare?</p></div></div>
+          <div class="card step"><div><h3>Aplică tool-ul potrivit</h3><p>Folosește ghiduri, prompturi și exemple pentru zona exactă din business.</p></div></div>
+          <div class="card step"><div><h3>Optimizează rezultatul</h3><p>Testează, îmbunătățește și transformă ce funcționează într-un sistem repetabil.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunitate">
+      <div class="wrap community">
+        <div class="section-head">
+          <div>
+            <h2>Comunități gratuite: Facebook + Skool</h2>
+            <p>Învață alături de oameni care vor să folosească AI-ul în business, nu doar să citească despre el. Primești resurse, idei, provocări și exemple aplicate.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="icon">📘</div>
+            <h3>Canal gratuit de Facebook</h3>
+            <p>Postări scurte, noutăți, tips, exemple de prompturi și discuții rapide cu antreprenori care experimentează AI în fiecare zi.</p>
+            <div class="hero-actions"><a class="btn primary" href="https://www.facebook.com/" target="_blank" rel="noopener">Intră pe Facebook</a></div>
+          </article>
+          <article class="card">
+            <div class="icon">🎓</div>
+            <h3>Canal gratuit de Skool</h3>
+            <p>Ghiduri organizate, lecții scurte, provocări și resurse pentru cei care vor să construiască un sistem AI în business.</p>
+            <div class="hero-actions"><a class="btn primary" href="https://www.skool.com/" target="_blank" rel="noopener">Intră pe Skool</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="wrap">
+        <div class="cta">
+          <div class="badge"><span class="dot"></span> Resurse gratuite pentru implementare rapidă</div>
+          <h2 style="margin-top:18px">Transformă AI-ul într-un avantaj real pentru afacerea ta.</h2>
+          <p>Începe cu prompturi, tips & tricks și comunitățile gratuite GenAIus Business. Învață să creezi mai repede, să vinzi mai clar și să automatizezi procesele repetitive.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn primary" href="mailto:contact@genaius.business?subject=Vreau acces la resursele GenAIus Business">Cere acces la resurse</a>
+            <a class="btn dark" href="#tooluri">Explorează tool-urile</a>
+          </div>
+          <p class="small" style="margin-top:18px">Notă: linkurile Facebook și Skool sunt pregătite ca placeholder și pot fi înlocuite cu grupurile oficiale.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="brand"><span class="logo">G</span><span>GenAIus Business</span></div>
+      <div class="small">© <span id="year"></span> GenAIus Business. AI pentru business-uri care vor să crească inteligent.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
